@@ -4,12 +4,13 @@ const faunadb = require('faunadb')
   q = faunadb.query
 const typeDefs = gql`
   type Query {
-   person:[record]
+   person:[record],
+   person_link:linked 
   }
 
   type Mutation {
     addperson(
-      name:String,
+      name:String
       title:String
     ):record
   }
@@ -18,11 +19,16 @@ const typeDefs = gql`
     name: String!
     title:String!
     Link:String!
+  } 
+  type linked{
+    name: String!
+    title:String!
+    Link:String!
   }
 `
 const resolvers = {
   Query: {
-    person:async(root,args,context)=>{
+   person:async(root,args,context)=>{
       try{
 var adminClient=new faunadb.Client({secret:'fnAERNN6VmACQrN3xcoHwWuQfBeG2cTe5RBLWpOu'})
 const result= await adminClient.query(
@@ -47,9 +53,31 @@ catch(error){
   console.log(error)
 
 }
-   }
+   },
+
+
+
+person_link:async(root,args,context)=>{
+  try{
+var adminClient=new faunadb.Client({secret:'fnAERNN6VmACQrN3xcoHwWuQfBeG2cTe5RBLWpOu'})
+const result= await adminClient.query(
+  q.Get(
+q.Match(
+  q.Index('BookMarks-Link-des') ) )
+)
+  return {
+ title: result.data.title,
+ name:result.data.name,
+ Link:result.data.Link
+}
+  }
+catch(error){
+console.log(error)
+
+}
+
+  }
 },
-  
 Mutation: {
   addperson: async (_,{name,title})=>{
     try{
