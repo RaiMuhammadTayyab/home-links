@@ -126,12 +126,47 @@ if (loading) {
 <br/>
 <button onClick={submithandle}> Enter please</button>
 <br/>
+<table border="2">
+  <thead>
+    <tr>
+<th>NAME</th>
+<th>TITLE</th>
+<th>LINKS</th>
+</tr>
+  </thead>
+  <tbody>
+{Persons.data.person.map(d=>{
+return <tr key={d.id}>
+  
+  <td> {d.name}</td>
+  
+  <td> {d.title}</td>
+  <td> {d.Link}</td>
+
+</tr>
 
 
-  {JSON.stringify(Persons.data.person)}
+})}
+  </tbody>
+</table>
+
 <br/>
-  <br/>                                                                                                                                                                                                                                                                                                                                                         
-  {JSON.stringify(Personquery.data.person_link)} 
+  <br/>   
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Link</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td>{Personquery.data.person_link.Link}</td>
+        </tr>
+      </tbody>
+    </thead>
+    
+    
+    
+    </table>                                                                                                                                                                                                                                                                                                                                                       
 
 
 </div>
