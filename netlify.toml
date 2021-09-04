@@ -1,5 +1,5 @@
 [build]
-command= 'npm run start'
-functions='functions'
-publish= 'public'
+command= 'yarn build'
+functions='functions/'
+publish= 'public/'
 autoLaunch = false
