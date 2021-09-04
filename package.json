@@ -16,11 +16,14 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.8",
+    "appolo": "^7.0.5",
     "gatsby": "^3.11.1",
     "gatsby-plugin-gatsby-cloud": "^3.0.0",
+    "lambda": "^0.10.3",
     "ponyfills": "^0.13.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "server": "^1.0.35",
     "shortid": "^2.2.16"
   }
 }
