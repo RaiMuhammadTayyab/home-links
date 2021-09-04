@@ -1,4 +1,4 @@
-import  React,{useState} from "react"
+import  React from "react"
 import {useQuery,useMutation } from '@apollo/client';
 import gql from 'graphql-tag'
 //import { navigate } from "@reach/router";
@@ -36,9 +36,9 @@ Link
 }
 `
 const Home= () => {
-  const[tit,settit]=useState('Manager')
-  const[nam,setname]=useState('Tayyab')
-  const[update,setupdate]=useState(undefined)
+//const[tit,settit]=useState('Manager')
+ // const[nam,setname]=useState('Tayyab')
+ //const[update,setupdate]=useState(undefined)
 let inputtitle
 let inputname
 const[addperson]=useMutation(Add_person)
@@ -62,9 +62,9 @@ const submithandle= async()=>{
       }) */
     
     })    
-  //console.log(update)
+  /*console.log(update)
   settit(inputtitle.value)
-  setname(inputname.value)
+  setname(inputname.value)*/
 inputtitle.value= ""
 inputname.value= ""
   }
