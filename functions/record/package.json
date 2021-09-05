@@ -1,0 +1,17 @@
+{
+  "name": "record",
+  "version": "1.0.0",
+  "description": "",
+  "main": "record.js",
+  "dependencies": {
+    "apollo-server-lambda": "^3.3.0",
+    "faunadb": "^4.4.1",
+    "graphql": "^15.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

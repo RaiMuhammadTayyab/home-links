@@ -111,20 +111,19 @@ if (loading) {
   }
   console.log(errors)
   return (
-    <>
+    <div>
 
     <h1>Personal Data base</h1>
    <div>
 <h2>Enter the title</h2>
-<br/>
 <input type='text' placeholder="title" ref={node=>{inputtitle=node}}/>
 <br/>
 <h2> Enter the name</h2>
-<br/>
 <input type="text" placeholder="name" ref={node=>{inputname=node}}/>
 <br/>
 <br/>
 <button onClick={submithandle}> Enter please</button>
+<br/>
 <br/>
 <table border="2">
   <thead>
@@ -147,12 +146,8 @@ return <tr key={d.id}>
 
 
 })}
-  </tbody>
-</table>
-
-<br/>
-  <br/>   
-  <table border="2">
+  </tbody>  
+  
     <thead>
       <tr>
         <th>Link</th>
@@ -168,9 +163,9 @@ return <tr key={d.id}>
     
     </table>                                                                                                                                                                                                                                                                                                                                                       
 
-
 </div>
- </> )
+</div>
+  )
 }
 
 export default Home
